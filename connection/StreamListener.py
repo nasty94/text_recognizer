@@ -37,7 +37,7 @@ class StreamListener(threading.Thread):
 
     def run(self):
 
-        try:
+        # try:
             buff_size = 8
             meta_data = StreamListener.__parse_meta_data(self.__receive_meta_data())
             size = int(meta_data["size"])
@@ -49,9 +49,9 @@ class StreamListener(threading.Thread):
                 buff_size = size if size < buff_size else buff_size
             self.__trigger_call_backs(bytearray(arr), meta_data)
 
-        except Exception as ex:
-            # TODO return this exception to the user
-            print(ex)
+        # except Exception as ex:
+        #     # TODO return this exception to the user
+        #     print(ex)
 
     def __trigger_call_backs(self, file, metadata: dict):
         for call_back in self.call_backs:

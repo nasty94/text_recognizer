@@ -10,7 +10,7 @@ class Initializer:
 
     def start_connection(self):
         self.socket.bind((self.address, self.port))
-        self.socket.listen(5)
+        self.socket.listen(10)
 
     def wait_for_connections(self):
         while True:

@@ -51,8 +51,8 @@ def view_image(image_arr: map, metadata: dict, _socket: socket):
     _socket.close()
 
 
-def file_received_call_back(data, metadata: dict, _socket: socket):
-    view_image(data, metadata, _socket)
+#def file_received_call_back(data, metadata: dict, _socket: socket):
+#  view_image(data, metadata, _socket)
 
 
 receiver = ImageReceiver(file_received_call_back)
